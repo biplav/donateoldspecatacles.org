@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Donate old spectacles</h1>
+  </div>
+  <p class="lead">Come here to donate old spectacles! </p>
+  </div>
+<div id="push"></div>
+{% endblock %}

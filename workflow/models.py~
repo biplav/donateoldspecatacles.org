@@ -1,0 +1,44 @@
+from django.db import models
+
+class Specatacle(models.Model):
+	SIZES = (
+        	('S', 'Kids'),
+	        ('M', 'Medium'),
+        	('L', 'Large'),
+   	 )
+    	id = models.AutoField(primary_key=True)
+	email_id = models.CharField(max_length=200)
+	size = models.CharField(max_length=1,choices=SIZES)
+	donate_date = models.DateTimeField('date donated')
+	power = models.ForeignKey(Power)
+	date_recieved = models.DateTimeField('date recived')
+	processed_by = models.ForeignKey(Optician)
+	donated_to = models.ForeignKey(NGO)
+	final_comments = models.CharField(max_length=400)
+	donation_image = models.SlugField(max_length=400) 
+	
+    	
+
+
+class Power(models.Model):
+    	right_distance_spherical = models.FloatField(default=0)
+    	right_distance_cylinderical = models.FloatField(default=0)
+	right_distance_cylinderical_axis = models.FloatField(default=0)
+	left_distance_spherical = models.FloatField(default=0)
+	left_distance_cylinderical = models.FloatField(default=0)
+	left_distance_cylinderical_axis = models.FloatField(default=0)
+
+class Optician(models.Model):
+	name = models.CharField(max_length=400)
+	address = models.CharField(max_length=600)
+	emailId = models.EmailField(max_length=200)
+	image_logo = models.SlugField(max_length=600)
+	phone = models.BigInteger(default=0)
+
+class NGO(models.Model):
+	name = models.CharField(max_length=400)
+        address = models.CharField(max_length=600)
+        emailId = models.EmailField(max_length=200)
+        image_logo = models.SlugField(max_length=600)
+        phone = models.BigInteger(default=0)
+	

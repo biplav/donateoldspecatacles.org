@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Donate old spectacle</h1>
+  </div>
+  {%if donate_id %}
+	<p class="lead"> Thanks for your donation! </p>
+  	<p>Please write the number BS00{{ donate_id }} on the paper used to wrap the specatacle with before putting it in the donation box. </p>
+  {% else %} 
+  <p class="lead">Fill in the below form before dropping the spectacle in the drop box.</p> 
+	<div id="push lead">
+		<form action="." method="post">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Submit" />
+		</form>
+	</div>
+  {% endif %}
+{% endblock %}
