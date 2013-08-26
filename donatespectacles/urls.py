@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'donatespectacles.views.home', name='home'),
     # url(r'^donatespectacles/', include('donatespectacles.foo.urls')),
     url(r'^home/', include('workflow.urls')),
+    url(r'^$', include('workflow.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
