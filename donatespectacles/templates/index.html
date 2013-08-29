@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="hero-unit">
@@ -24,18 +25,45 @@
       <div class="row">
         <div class="span4">
           <h2>NGO Partners</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <p><div class="media">
+		<a target="_blank" href="http://snehadeep.org.in/" class="pull-left">
+			<img class="media-object" src="{% static "images/snehadeep.png" %}" />
+		</a>
+		<div class="media-body">
+    		<h4 class="media-heading">Snehadeep Trust for Disabled</h4>
+		Snehadeep Trust for the Disabled was established in 1999 by three visually impaired graduates, who had a strong will to empower the disabled with life opportunities, which they had fought so hard for.
+		</div>
+	</div>
+	<h6> We are looking for more partners. </h6>
+	</p>
+          <p><a class="btn" href="#">Join us&raquo;</a></p>
         </div>
         <div class="span4">
           <h2>Optical Partners</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+	<div class="media">
+                <a target="_blank" href="http://www.donateoldspectacles.org/" class="pull-left">
+                        <img class="media-object" src="{% static "images/blank.png" %}" />
+                </a>
+                <div class="media-body">
+                <h4 class="media-heading">Be Featured here.</h4>
+		Currently we are looking for opticals to support us in this noble cause. If you are interested in helping us in the cause, please write to us. Helping us in the cause will also help opticals to generate more lead and aquire more cutomers.
+                </div>
+        </div></p>
+        <a class="btn" href="#">Support us &raquo;</a></p>
        </div>
         <div class="span4">
           <h2>Corporate Partners</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+	<div class="media">
+                <a target="_blank" href="http://www.donateoldspectacles.org/" class="pull-left">
+                        <img class="media-object" src="{% static "images/blank.png" %}" />
+                </a>
+                <div class="media-body">
+                <h4 class="media-heading">Be Featured here.</h4>
+               As a corporate organisation, you can run campaingns to collect old spectacles from the employees and hand it over to us. Running such campaign is simple and hassle free. Your employees also benefits from the same as we provide them with discount coupons for next purpose. And the entire process is transparent as once can track the donation on the site.
+                </div>
+        </div></p>
+
+          <a class="btn" href="#">View details &raquo;</a></p>
         </div>
       </div>
 
