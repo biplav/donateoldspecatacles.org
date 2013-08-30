@@ -12,6 +12,7 @@
   {% else %} 
   <p>Fill in the below form before dropping the spectacle in the drop box.</p> 
 	<div id="push lead">
+		{% if form.email_id.error or form.size.errors%}
 		<span class="label label-important">
 			{% if form.email_id.errors%}
             		Email: {% for e in form.email_id.errors %} {{e}} {% endfor %}
@@ -21,6 +22,7 @@
                         {% endif %}
 
 		</span>
+		{% endif %}
 		<form action="." method="post" class="form-inline">{% csrf_token %}
 		{% if form.email_id.errors %}
 			<div class="control-group error help-inline" >
