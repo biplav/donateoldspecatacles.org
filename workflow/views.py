@@ -3,10 +3,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from workflow.forms import DonateForm
 from workflow.models import Spectacle
+from django.core.mail import send_mail
 
 
 def get_total_donation():
 	return Spectacle.objects.count()
+
+def mail(to,subject,content):
+	send_mail(subject, content, "donateoldspectacles@gmail.com", [to], fail_silently=False)
 
 def index(request):
 	if request.method == 'POST':
@@ -14,6 +18,19 @@ def index(request):
         	if form.is_valid():
             		donate = form.save()
 			id = donate.id
+			message="""
+Hello,
+
+Thanks for your donation.
+Your donation id is %s. Please wrap the spectacles with a piece of paper with this id written.
+Please visit http://www.donateoldspectacles.org/?search=%s to track your donation.
+				
+Regards,
+DonateoldSpectacles.org Team.
+					
+			""" % (("BS00"+str(id)),("BS00"+str(id)))
+			mail(donate.email_id,"Thanks for your donation",message)
+
 			context =  { 'latest_count': get_total_donation(),
                      		     'form' : form,
 				     'donate_id': id,	
