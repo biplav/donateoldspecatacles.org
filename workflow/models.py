@@ -43,7 +43,7 @@ class Spectacle(models.Model):
         	('L', 'Large'),
    	 )
     	id = models.AutoField(primary_key=True)
-	email_id = models.CharField(max_length=200)
+	email_id = models.EmailField(max_length=200)
 	size = models.CharField(max_length=1,choices=SIZES)
 	donate_date = models.DateField(auto_now_add=True)
 	power = models.ForeignKey(Power,null=True)

@@ -18,6 +18,10 @@ def index(request):
                      		     'form' : form,
 				     'donate_id': id,	
                 	}
+		else: #Form error scenario
+			context =  { 'latest_count': get_total_donation(),
+                     		     'form' : form,
+                	}
 
 	else:
 		form = DonateForm()

@@ -12,9 +12,31 @@
   {% else %} 
   <p>Fill in the below form before dropping the spectacle in the drop box.</p> 
 	<div id="push lead">
+		<span class="label label-important">
+			{% if form.email_id.errors%}
+            		Email: {% for e in form.email_id.errors %} {{e}} {% endfor %}
+			{% endif %}
+			{% if form.size.errors%}
+                         Size: {% for e in form.size.errors %} {{e}} {% endfor %}
+                        {% endif %}
+
+		</span>
 		<form action="." method="post" class="form-inline">{% csrf_token %}
+		{% if form.email_id.errors %}
+			<div class="control-group error help-inline" >
+		{% endif %}
 		<input id="id_email_id" maxlength="200" name="email_id" type="text" placeholder="Email">
+		{% if form.email_id.errors  %}
+			</div>
+		{% endif %}
+		{% if form.size.errors %}
+			<div class="control-group error help-inline" >
+		{% endif %}
 		{{ form.size }}
+		{% if form.size.errors  %}
+			</div>
+		{% endif %}
+
 
 		<input type="submit" value="Donate" class="btn btn-primary"/>
 		</form>
