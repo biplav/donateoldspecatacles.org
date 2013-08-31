@@ -34,6 +34,16 @@ class NGO(models.Model):
         emailId = models.EmailField(max_length=200)
         image_logo = models.SlugField(max_length=600)
         phone = models.BigIntegerField(default=0)
+
+class Location(models.Model):
+	name = models.CharField(max_length=400)
+        address = models.CharField(max_length=600)
+        emailId = models.EmailField(max_length=200)
+        image_logo = models.SlugField(max_length=600)
+        phone = models.BigIntegerField(default=0) 
+	def __unicode__(self):
+		return self.name
+
 	
 
 class Spectacle(models.Model):
@@ -46,6 +56,7 @@ class Spectacle(models.Model):
 	email_id = models.EmailField(max_length=200)
 	size = models.CharField(max_length=1,choices=SIZES)
 	donate_date = models.DateField(auto_now_add=True)
+	location = models.ForeignKey(Location,null=False)
 	power = models.ForeignKey(Power,null=True)
 	date_recieved = models.DateTimeField('date recived', blank=True, null=True)
 	processed_by = models.ForeignKey(Optician,null=True)

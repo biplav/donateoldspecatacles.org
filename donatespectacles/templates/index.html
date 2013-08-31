@@ -18,7 +18,9 @@
 			{% if form.size.errors%}
                          Size: {% for e in form.size.errors %} {{e}} {% endfor %}
                         {% endif %}
-
+			{% if form.location.errors%}
+                         Location: {% for e in form.location.errors %} {{e}} {% endfor %}
+                        {% endif %}
 		</span>
 		{% endif %}
 		<form action="." method="post" class="form-inline">{% csrf_token %}
@@ -36,8 +38,13 @@
 		{% if form.size.errors  %}
 			</div>
 		{% endif %}
-
-
+		{% if form.location.errors %}
+                        <div class="control-group error help-inline" >
+                {% endif %}
+                {{ form.location }}
+                {% if form.location.errors  %}
+                        </div>
+		{% endif %}
 		<input type="submit" value="Donate" class="btn btn-primary"/>
 		</form>
 	</div>

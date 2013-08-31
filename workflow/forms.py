@@ -4,7 +4,7 @@ from workflow.models import Spectacle
 class DonateForm(ModelForm):	
 	class Meta:
 		model = Spectacle
-	        fields = ['email_id', 'size']
+	        fields = ['email_id', 'size','location']
 
 
 
