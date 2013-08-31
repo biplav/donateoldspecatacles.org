@@ -8,5 +8,6 @@ urlpatterns = patterns('',
     url(r'^contact$', views.contact, name='contact'),
     url(r'^ngo$', views.ngo, name='ngo'),
     url(r'^optical$', views.optical, name='optical'),
-    url(r'^corporate$', views.corporate, name='corporate')
+    url(r'^corporate$', views.corporate, name='corporate'),
+    url(r'^search$', views.search, name='search')
 )

@@ -23,7 +23,7 @@ Hello,
 
 Thanks for your donation.
 Your donation id is %s. Please wrap the spectacles with a piece of paper with this id written.
-Please visit http://www.donateoldspectacles.org/?search=%s to track your donation.
+Please visit http://www.donateoldspectacles.org/home/search?query=%s to track your donation.
 				
 Regards,
 DonateoldSpectacles.org Team.
@@ -66,3 +66,12 @@ def optical(request):
 def corporate(request):
 	context = { 'latest_count':get_total_donation() }
 	return render(request,'corporate.html',context)
+
+def search(request):
+	query=request.GET['query']
+	query_id=query.replace("BS00","")
+	data = Spectacle.objects.filter(id__iexact=query_id) | Spectacle.objects.filter(email_id__icontains=query)
+	context = { 'latest_count':get_total_donation(),
+		    'data':data		
+	 }
+	return render(request,'search.html',context)
