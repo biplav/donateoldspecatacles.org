@@ -54,3 +54,15 @@ def how(request):
 def contact(request):
 	context = { 'latest_count':get_total_donation() }
 	return render(request,'contact.html',context)
+
+def ngo(request):
+	context = { 'latest_count':get_total_donation() }
+	return render(request,'ngo.html',context)
+
+def optical(request):
+	context = { 'latest_count':get_total_donation() }
+	return render(request,'optical.html',context)
+
+def corporate(request):
+	context = { 'latest_count':get_total_donation() }
+	return render(request,'corporate.html',context)
