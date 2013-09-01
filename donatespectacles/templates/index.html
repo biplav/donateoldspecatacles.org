@@ -7,6 +7,9 @@
   {%if donate_id %}
 	<p class="lead"> Thanks for your donation! </p>
   	<p>Please write the number BS00{{ donate_id }} on the paper used to wrap the specatacle with before putting it in the donation box. </p>
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.donateoldspectacles.org%2Fhome%2Fsearch%3Fquery%3DBS00{{ donate_id }}" target="_blank">
+<img src={% static "images/facebook-share.gif" %} alt="Share on Facebook" />
+</a>
   {% else %} 
   <p>Fill in the below form before dropping the spectacle in the drop box.</p> 
 	<div id="push lead">

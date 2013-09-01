@@ -165,7 +165,7 @@ EMAIL_HOST_USER = 'donateoldspectacles@gmail.com'
 EMAIL_HOST_PASSWORD = 'biplav3403'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
+"""
 #Thing below should only go in production
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
@@ -186,3 +186,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+"""
