@@ -1,11 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div style="padding-top:60px">
-<div class="page-header">
-  <h1>How it works?</h1>
-</div>
-<p> Please use the number generated on submitting the form on the home to write on the paper before wrapping it with the spectacles and dropping it in the dropbox.</p>
-  </div>
+	<div class="page-header">
+  		<h1>How it works?</h1>
+	</div>
+	<div class="row">
+        	<div class="span5">
+          		<h4>Fill the form on the website.</h4>
+          		<p><div class="media">
+                    		<img class="img-rounded" src="{% static "images/how-1.png" %}" />
+        		</div></p>
+		</div>
+	<div class="span5">
+                        <h4>Note the id and share it on facebook.</h4>
+                        <p><div class="media">
+                                <img class="img-rounded" src="{% static "images/how-2.png" %}" />
+                        </div></p>
+                </div>
+	</div>
+	<div class="row">
+        	<div class="span5">
+          		<h4>Wrap the spectacle with a paper with the id on it and drop it in donation box.</h4>
+          		<p><div class="media">
+                    		<img class="img-rounded" src="{% static "images/how-3.png" %}" />
+        		</div></p>
+		</div>
+	<div class="span5">
+                        <h4>Use search box to track the status of your donation</h4>
+                        <p><div class="media">
+                                <img class="img-rounded" src="{% static "images/how-4.png" %}" />
+                        </div></p>
+                </div>
+	</div>
+
+
 </div>
 {% endblock %}

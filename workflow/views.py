@@ -18,22 +18,24 @@ def index(request):
         	if form.is_valid():
             		donate = form.save()
 			id = donate.id
+			location = donate.location
 			message="""
 Hello,
 
 Thanks for your donation.
-Your donation id is %s. Please wrap the spectacles with a piece of paper with this id written.
+Your donation id is %s. Please wrap the spectacles with a piece of paper with this id written and drop it at %s.
 Please visit http://www.donateoldspectacles.org/home/search?query=%s to track your donation.
 				
 Regards,
 DonateoldSpectacles.org Team.
 					
-			""" % (("BS00"+str(id)),("BS00"+str(id)))
+			""" % (("BS00"+str(id)),("BS00"+str(id)),location)
 			mail(donate.email_id,"Thanks for your donation",message)
 
 			context =  { 'latest_count': get_total_donation(),
                      		     'form' : form,
-				     'donate_id': id,	
+				     'donate_id': id,
+				     'donate_location' : location,
                 	}
 		else: #Form error scenario
 			context =  { 'latest_count': get_total_donation(),
